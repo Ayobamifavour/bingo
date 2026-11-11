@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crystalbingo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section id="home">
+    <div class="gtabs">
+      <button class="gtab on" data-game="football">⚽ Football Bingo</button>
+      <button class="gtab" data-game="worldcup">🏆 World Cup</button>
+    </div>
+    <div class="brand">
+      <div class="mini">
+        <span><img src="https://flagcdn.com/w80/ar.png" alt=""></span><i></i><i></i><span>🧤</span>
+      </div>
+      <div>
+        <h1 id="home-title">Football Bingo</h1>
+        <p id="home-tag" class="tagline">Ball Knowledge meets Bingo</p>
+        <button id="how-link" class="link">How to play</button>
+      </div>
+    </div>
+    <h3 class="choose">Choose your game mode</h3>
+    <div class="mcards">
+      <button id="m-daily" class="mcard"><span class="mi">📅</span><b>Daily challenge</b><small>Can you complete today's card?</small></button>
+      <button id="m-yesterday" class="mcard"><span class="mi">🕘</span><b>Yesterday</b><small>Another chance to play yesterday's card</small></button>
+      <button id="m-friends" class="mcard"><span class="mi">👥</span><b>With friends</b><small>Compete against your friends</small></button>
+    </div>
+  </section>
+
+  <section id="friends" hidden>
+    <button id="f-back" class="small back">← Back</button>
+    <h2 class="mode-title">With friends</h2>
+    <p class="tag">Everyone plays the same card</p>
+    <div class="fbox">
+      <button id="f-create" class="primary wide">Create a game</button>
+      <p class="or">or join a friend</p>
+      <input id="f-code" maxlength="12" placeholder="Enter code" autocomplete="off">
+      <button id="f-join" class="share wide">Join game</button>
+      <p id="friend-msg"></p>
+    </div>
+  </section>
+
+  <section id="game" hidden>
+    <header class="head">
+      <button id="btn-help" class="icon-btn" aria-label="How to play">ⓘ</button>
+      <button id="logo" class="logo" aria-label="Home">Crystalbingo</button>
+      <button id="btn-stats" class="icon-btn" aria-label="Statistics">📊</button>
+    </header>
+    <p id="game-title" class="gtitle"></p>
+    <div class="topbar">
+      <button id="back" class="small back" aria-label="Back to modes">← Back</button>
+      <span id="timer"></span>
+      <button id="skip" class="skip" aria-label="Skip player">Skip &#9197;</button>
+    </div>
+    <div id="progress"><i id="bar"></i></div>
+    <p id="counter"></p>
+    <div id="player" class="idle"><strong id="player-name"></strong></div>
+
+    <div class="boardwrap">
+      <div id="startbar" class="startbar">
+        <button id="t-timer">⏱ Timer</button>
+        <span>OR</span>
+        <button id="t-free">🚫 No Timer</button>
+      </div>
+      <div id="board"></div>
+    </div>
+    <div class="actions"><button id="wildcard">🃏 Wildcard</button></div>
+    <p id="msg"></p>
+
+    <nav class="cardnav">
+      <span class="navl"><button id="n-first" aria-label="First card">«</button><button id="n-prev">‹ Previous</button></span>
+      <span id="card-no"></span>
+      <span class="navr"><button id="n-next">Next ›</button><button id="n-last" aria-label="Latest card">»</button></span>
+    </nav>
+
+    <aside class="tech">
+      <h3>Technical area</h3>
+      <div id="tech-body"></div>
+      <a href="mailto:?subject=Crystalbingo%20data%20issue">Report data issue</a>
+    </aside>
+  </section>
+</main>
+
+<div id="flash" hidden><span>CRYSTAAAAL</span></div>
+
+<div id="result" class="modal" hidden>
+  <div class="sheet">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <h2 id="r-title"></h2>
+    <div class="stats" id="r-main"></div>
+    <hr>
+    <div class="stats" id="r-stats"></div>
+    <div class="next">
+      <p>NEXT CRYSTALBINGO <b class="countdown"></b></p>
+      <button id="share" class="share">Share</button>
+    </div>
+    <button id="sb-next" class="primary wide">Play next card</button>
+  </div>
+</div>
+
+<div id="stats" class="modal" hidden>
+  <div class="sheet">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <h2>Statistics</h2>
+    <div class="stats" id="s-stats"></div>
+    <p class="next-line">Next Crystalbingo <b class="countdown"></b></p>
+  </div>
+</div>
+
+<div id="howto" class="modal" hidden>
+  <div class="sheet left">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <h2>How to play</h2>
+    <p>Crystalbingo is a challenge to complete the bingo card. Choose Timer or No Timer, then a random player appears at the top and you must match them to 1 of the 16 categories on the card. More players appear until you complete the card or run out of players.</p>
+    <p>If Cristiano Ronaldo appears and the card has Ballon d'Or or Juventus, think carefully: you can only pick 1 per player.</p>
+    <p>Categories include clubs, countries, regions, leagues, trophies, awards, managers and teammates. Half the players fit nothing on the card, so skipping is part of the game.</p>
+    <p>Pick a wrong category and you miss the next player. Skip safely with the Skip button to avoid the penalty.</p>
+    <p>If a player fits several categories, play your wildcard to fill them all. You get it once per card.</p>
+    <p>Fewer players used means a higher efficiency score. A new card is waiting at midnight. Use Yesterday or the arrows under the board to play older cards, or play the same card as your friends.</p>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="football.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
